@@ -1,0 +1,316 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+  color: #fff; /* Set text color to white */
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Ensure smooth scrolling */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  position: relative; /* For absolute positioning of background elements */
+}
+
+/* Animated background overlay */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 70%);
+  opacity: 0.2;
+  z-index: -1; /* Behind all content */
+  animation: moveBackground 10s linear infinite;
+  pointer-events: none; /* Ensure background overlay does not interfere with scrolling */
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* App styling */
+.App {
+  text-align: center;
+  min-height: 100vh; /* Ensure the app covers the full viewport height */
+  display: flex;
+  flex-direction: column; /* Allows content to grow and be scrollable */
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #004080; /* Adjust as needed */
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+  z-index: 1; /* Ensure navbar is above the animated background */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px; /* Adjust size as needed */
+  margin-right: 15px;
+}
+
+.school-logo {
+  /* Specific styles for the school logo */
+}
+
+.club-logo {
+  /* Specific styles for the club logo */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* Content styling */
+.content {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex: 1; /* Allows content area to grow and fill remaining space */
+  position: relative; /* For background animations */
+}
+
+/* Section styling */
+.section {
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* For background animations */
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+  opacity: 0.1;
+  z-index: -1; /* Behind section content */
+  animation: moveBackground 15s linear infinite;
+  pointer-events: none; /* Ensure background does not interfere with content interaction */
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+  position: relative; /* For background animations */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+}
+
+/* Event gallery styling */
+.event-gallery {
+  padding: 40px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.gallery-item h3 {
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.gallery-item p {
+  color: #555;
+  font-size: 16px;
+}
+
+/* Past event styling */
+.past-event-header {
+  margin-top: 60px;
+  color: #004080;
+  font-size: 24px;
+}
+
+/* Home page styling */
+.home {
+  padding: 40px;
+  text-align: center;
+}
+
+.home h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.home p {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Slideshow styling */
+.slideshow {
+  width: 590px; /* Set fixed width */
+  height: 600px; /* Set fixed height */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+  display: block;
+}
+
+/* Upcoming event section */
+.upcoming-events {
+  margin-top: 80px; /* Increased space above upcoming events */
+}
+
+.upcoming-events h2 {
+  color: #ffffff;
+}
+
+.upcoming-events p {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Video section styling */
+.video-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.video-section h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.video-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 1000px; /* Adjust the max-width as needed */
+  height: 550px; /* Adjust the height as needed */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #004080;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #003366;
+  transform: scale(1.05);
+}
