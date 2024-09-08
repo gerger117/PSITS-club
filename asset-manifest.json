@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PSITS-club/static/css/main.758b46b7.css",
+    "main.js": "/PSITS-club/static/js/main.251f22e3.js",
+    "static/js/453.d285cea1.chunk.js": "/PSITS-club/static/js/453.d285cea1.chunk.js",
+    "index.html": "/PSITS-club/index.html",
+    "main.758b46b7.css.map": "/PSITS-club/static/css/main.758b46b7.css.map",
+    "main.251f22e3.js.map": "/PSITS-club/static/js/main.251f22e3.js.map",
+    "453.d285cea1.chunk.js.map": "/PSITS-club/static/js/453.d285cea1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.758b46b7.css",
+    "static/js/main.251f22e3.js"
+  ]
+}
